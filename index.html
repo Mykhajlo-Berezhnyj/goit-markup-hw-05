@@ -56,7 +56,9 @@
       <section class="section section-first">
         <div class="container">
           <h1 class="title">Effective Solutions for Your Business</h1>
-          <button type="button" class="button-first">Order Service</button>
+          <button type="button" class="button-first" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <section class="section section-second">
@@ -545,14 +547,16 @@
             </li>
           </ul>
         </div>
-        <form class="footer-form" action="">
+        <form class="footer-form">
           <label for="email">Subscribe</label>
           <input class="input-text" type="email" />
           <button class="button-subscribe" type="submit">Subscribe</button>
         </form>
       </div>
     </footer>
-    <div class="backdrop is-open"></div>
-    <div class="modal"></div>
+    <div class="backdrop" data-modal>
+      <div class="modal"></div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
