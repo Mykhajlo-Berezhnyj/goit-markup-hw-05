@@ -578,8 +578,13 @@ label-footer {
 
 .btn-close:hover {
    background-color: #404bbf;
-   fill: #fff;
+    
 }
+.btn-close:hover .icon-btn {
+  fill: #fff;
+  
+}
+
 
 .text-modal {
   font-weight: 500;
@@ -628,8 +633,6 @@ label-footer {
   top: 8px;
   left: 16px;
   padding: 3px 0;
-  color: green; 
-  fill: red;
 }
 
 .form-input {
@@ -641,8 +644,13 @@ label-footer {
   outline: none;
 }
 
-.form-input:active {
+.form-icon {
+fill: #2e2f42;
+}
 
+.form-input:active {
+  border: 1px solid #4d5ae5;
+fill: #4d5ae5;
 }
 
 .input-textarea {
