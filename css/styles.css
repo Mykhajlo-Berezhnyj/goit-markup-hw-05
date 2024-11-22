@@ -648,9 +648,16 @@ label-footer {
 fill: #2e2f42;
 }
 
-.form-input:active {
+.form-input:active,
+.form-input:focus {
   border: 1px solid #4d5ae5;
-fill: #4d5ae5;
+
+  
+}
+
+.form-input:focus .form-icon, 
+.form-input:active .form-icon {
+   fill: red;
 }
 
 .input-textarea {
