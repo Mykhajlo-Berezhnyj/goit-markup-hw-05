@@ -172,7 +172,8 @@ li {
   text-align: center;
   color: #fff;
 }
-.button-first {
+.button-first,
+.button-accent {
   display: block;
   min-width: 169px;
   height: 56px;
@@ -471,23 +472,29 @@ li {
 .footer-form {
 }
 
-label-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 160px;
+.label-footer {
+  display: inline-block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
+  margin-bottom: 16px;
+}
+
+.subscripe-wrap {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 24px;
 }
 
 .input-text {
-  display: inline-flex;
   border: 1px solid #fff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
+  padding: 8px 16px;
   font-weight: 400;
   font-size: 12px;
   line-height: 2;
@@ -568,8 +575,7 @@ label-footer {
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0.1);
   margin: 24px 24px 24px auto;
-
-} 
+}
 
 .icon-btn {
   width: 100%;
@@ -577,14 +583,11 @@ label-footer {
 }
 
 .btn-close:hover {
-   background-color: #404bbf;
-    
+  background-color: #404bbf;
 }
 .btn-close:hover .icon-btn {
   fill: #fff;
-  
 }
-
 
 .text-modal {
   font-weight: 500;
@@ -600,8 +603,7 @@ label-footer {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 8px;
-  padding: 32px 16px 0 16px;
+  padding: 16px 24px 0 24px;
 }
 
 .form-field {
@@ -610,7 +612,7 @@ label-footer {
   justify-content: flex-start;
   flex-direction: column;
   gap: 4px;
-
+  margin-bottom: 8px;
 }
 
 .form-label {
@@ -620,7 +622,6 @@ label-footer {
   line-height: 1.167;
   letter-spacing: 0.04em;
   color: #8e8f99;
-
 }
 
 .input-wrapper {
@@ -630,9 +631,10 @@ label-footer {
 
 .form-icon {
   position: absolute;
-  top: 8px;
+  top: 50%;
   left: 16px;
-  padding: 3px 0;
+  transform: translateY(-50%);
+  fill: #2e2f42;
 }
 
 .form-input {
@@ -641,35 +643,105 @@ label-footer {
   width: 360px;
   height: 40px;
   padding-left: 38px;
-  outline: none;
+  outline: transparent;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border-color;
 }
 
-.form-icon {
-fill: #2e2f42;
-}
-
-.form-input:active,
 .form-input:focus {
   border: 1px solid #4d5ae5;
-
-  
 }
 
-.form-input:focus .form-icon, 
-.form-input:active .form-icon {
-   fill: red;
+.form-input:focus + .form-icon {
+  fill: #4d5ae5;
 }
 
 .input-textarea {
-border: 1px solid rgba(46, 47, 66, 0.4);
-border-radius: 4px;
-width: 360px;
-height: 120px;
-font-weight: 400;
-font-size: 12px;
-line-height: 1.16667;
-letter-spacing: 0.04em;
-color: rgba(46, 47, 66, 0.4);
-padding: 0 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 360px;
+  height: 120px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  outline: transparent;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border-color;
 }
 
+.input-textarea:focus {
+  border: 1px solid #4d5ae5;
+}
+
+.modal-form-agremeent {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-form-agremeent-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.modal-form-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border-color;
+}
+
+input[type='checkbox']:checked
+  + .modal-form-agremeent-text
+  > .modal-form-checkbox {
+  fill: #404bbf;
+  border: 1px solid #404bbf;
+}
+
+.modal-form-checkbox-icon {
+  opacity: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity;
+}
+input[type='checkbox']:checked
+  + .modal-form-agremeent-text
+  > .modal-form-checkbox
+  > .modal-form-checkbox-icon {
+  opacity: 1;
+}
+input[type='checkbox']:focus-visible
+  + .modal-form-agremeent-text
+  > .modal-form-checkbox {
+  outline: 2px solid #404bbf;
+  outline-offset: 2px;
+}
+
+.modal-form-checkbox-icon {
+}
+
+.modal-form-agremeent-link {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
+.button-accent {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition-property: background-color, box-shadow;
+}
