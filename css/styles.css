@@ -519,7 +519,15 @@ li {
   letter-spacing: 0.04em;
   text-align: center;
   color: #fff;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
+  cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color;
+}
+
+.button-subscribe:hover,
+.button-subscribe:focus {
+  background-color: #404bbf;
 }
 
 .backdrop {
