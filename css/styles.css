@@ -558,7 +558,7 @@ li {
   min-height: 584px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
-
+  padding: 72px 24px 24px 24px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
@@ -572,17 +572,21 @@ li {
 }
 
 .btn-close {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
   border-radius: 50%;
   background-color: #e7e9fc;
   fill: #2e2f42;
+  cursor: pointer;
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0.1);
-  margin: 24px 24px 24px auto;
 }
 
 .icon-btn {
@@ -604,14 +608,7 @@ li {
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
-}
-
-.wrap-form {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding: 16px 24px 0 24px;
+  margin-bottom: 16px;
 }
 
 .form-field {
@@ -664,6 +661,10 @@ li {
   fill: #4d5ae5;
 }
 
+.form-area {
+  margin-bottom: 16px;
+}
+
 .input-textarea {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
@@ -684,16 +685,10 @@ li {
 }
 
 .modal-form-agremeent {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 24px;
 }
 
 .modal-form-agremeent-text {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.167;
@@ -732,14 +727,12 @@ input[type='checkbox']:checked
   > .modal-form-checkbox-icon {
   opacity: 1;
 }
+
 input[type='checkbox']:focus-visible
   + .modal-form-agremeent-text
   > .modal-form-checkbox {
   outline: 2px solid #404bbf;
   outline-offset: 2px;
-}
-
-.modal-form-checkbox-icon {
 }
 
 .modal-form-agremeent-link {
